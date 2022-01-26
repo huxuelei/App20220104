@@ -1,0 +1,19 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        // 阿里云云效仓库：https://maven.aliyun.com/mvn/guide
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        // 华为开源镜像：https://mirrors.huaweicloud.com/
+        maven { url 'https://repo.huaweicloud.com/repository/maven/' }
+    }
+}
+rootProject.name = "App20220104"
+include ':app'
+include ':toolslib'
+include ':httplib'
+include ':uilib'
+include ':framelib'
