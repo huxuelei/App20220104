@@ -130,14 +130,17 @@ public abstract class BaseActivity<VB extends ViewDataBinding, VM extends BaseVM
 
     @Override
     protected void onDestroy() {
+        if (null != binding) {
+            binding.unbind();
+        }
+        if (viewModel != null) {
+            viewModel.release();
+        }
         if (ActivityManageUtils.getInstance().getCount() == 0) {
             AppExit();
         } else {
             //activity管理
             ActivityManageUtils.getInstance().killActivity(this);
-        }
-        if (viewModel != null) {
-            viewModel.release();
         }
         super.onDestroy();
     }

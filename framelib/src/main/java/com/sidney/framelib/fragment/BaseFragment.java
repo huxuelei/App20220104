@@ -249,4 +249,11 @@ public abstract class BaseFragment<VB extends ViewDataBinding, VM extends BaseVM
         ft.commitAllowingStateLoss();
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (null != binding) {
+            binding.unbind();
+        }
+    }
 }
