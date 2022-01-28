@@ -29,6 +29,7 @@ import com.sidney.framelib.mvvm.IBaseView;
 import com.sidney.framelib.mvvm.VmCommand;
 import com.sidney.tools.ActivityManageUtils;
 import com.sidney.tools.KeyboardUtils;
+import com.sidney.ui.dialog.LoadingDialog;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -247,6 +248,49 @@ public abstract class BaseActivity<VB extends ViewDataBinding, VM extends BaseVM
     @Override
     public void showToast(int resid) {
         ToastUtils.show(resid);
+    }
+
+    private LoadingDialog mDialog;
+
+    /**
+     * 数据加载弹框
+     */
+    protected void showLoadingDialog() {
+        showLoadingDialog("正在加载...", false, false);
+    }
+
+    /**
+     * 数据加载弹框
+     *
+     * @param msg
+     */
+    protected void showLoadingDialog(String msg) {
+        showLoadingDialog(msg, false, true);
+    }
+
+    /**
+     * 数据加载弹框
+     *
+     * @param msg
+     * @param isCancelable    设置是否可以按返回键取消
+     * @param isCancelOutside 设置点击外部是否取消
+     */
+    protected void showLoadingDialog(String msg, boolean isCancelable, boolean isCancelOutside) {
+        mDialog = new LoadingDialog.Builder(mActivity)
+                .setCancelable(isCancelable)
+                .setCancelOutside(isCancelOutside)
+                .setMsg(msg)
+                .create();
+        mDialog.show();
+    }
+
+    /**
+     * 数据加载弹框 消失
+     */
+    protected void dismissLoadingDialog() {
+        if (null != mDialog) {
+            mDialog.dismiss();
+        }
     }
 
     /**

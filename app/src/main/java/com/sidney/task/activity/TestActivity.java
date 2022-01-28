@@ -16,6 +16,7 @@ import com.sidney.tools.LogUtils;
 
 public class TestActivity extends BaseActivity<ActivityTestBinding, TestVM> {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,11 +39,13 @@ public class TestActivity extends BaseActivity<ActivityTestBinding, TestVM> {
             @Override
             public void onLeftClick(TitleBar titleBar) {
                 showToast("左项 View 被点击");
+
             }
 
             @Override
             public void onTitleClick(TitleBar titleBar) {
-                showToast("中间 View 被点击");
+                //showToast("中间 View 被点击");
+
             }
 
             @Override
