@@ -77,4 +77,5 @@ dependencies {
 
     implementation project(path: ':httplib')
     implementation project(path: ':framelib')
+    implementation project(path: ':multiItemlib')
 }

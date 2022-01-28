@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/dp_10"
-            android:text="2222"
+            android:text="Multi复杂布局"
             android:textColor="@color/black"
             android:textSize="20sp" />
     </LinearLayout>

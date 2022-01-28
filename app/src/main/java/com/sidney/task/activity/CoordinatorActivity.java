@@ -23,7 +23,6 @@ import java.util.List;
  * 修 改 人：xxx  2022/1/27 15:46
  * 修改版本：
  */
-
 public class CoordinatorActivity extends AppCompatActivity {
 
     private RecyclerView rv;
