@@ -10,9 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App20220104">
-<!--        <activity-->
-<!--            android:name=".activity.TestActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".activity.CoordinatorActivity"
+            android:theme="@style/Theme.App20220104.NoActionBar"
+            android:exported="false" />
+        <!-- <activity -->
+        <!-- android:name=".activity.TestActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".activity.TestActivity"
             android:exported="true"

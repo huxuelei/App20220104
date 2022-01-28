@@ -1,7 +1,6 @@
 package com.sidney.task.activity;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -56,6 +55,7 @@ public class TestActivity extends BaseActivity<ActivityTestBinding, TestVM> {
             public void onClick(View v) {
                 VmCommand vmCommand = new VmCommand("tttt", "ttttt");
                 viewModel.runCommand(vmCommand);
+                CoordinatorActivity.launch(mActivity);
             }
         });
         binding.tv2.setOnClickListener(new View.OnClickListener() {
